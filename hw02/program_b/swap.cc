@@ -1,10 +1,9 @@
-#include "add.h"
+#include "swap.h"
 
 /**********************************************************************
-definition of the add function
+definition of the swap function
 **********************************************************************/
-double add(double(x)) {
+double swap(double(x)) {
     
-    return x+x;
     
-} // end of add function
+} // end of swap function
