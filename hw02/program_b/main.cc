@@ -4,8 +4,8 @@
  *
  ************************************************************************/
 int main() {
-    
-    printf("hello world");
-    
+    st
+    printf("Enter two integers\n");
+        
 } // end of main
 
