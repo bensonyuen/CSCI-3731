@@ -1,9 +1,12 @@
 #include "swap.h"
 
 /**********************************************************************
-definition of the swap function
+* this is the definition of the swap function
 **********************************************************************/
-double swap(double(x)) {
-    
+void swap(int x, int y) {
+    int temp = 0;
+    temp = x;
+    x = y;
+    y = temp;
     
 } // end of swap function
