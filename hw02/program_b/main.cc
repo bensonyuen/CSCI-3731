@@ -11,11 +11,8 @@ int main() {
     scanf("%d", &a);
     scanf("%d", &b);
     printf("You entered %d, %d\n", a, b);
-    swap (a, b);
+    swap (&a, &b);
     printf("Swapped: %d, %d\n", a, b);
-    // temp = a;
-    // a = b;
-    // b = temp;
 
 } // end of main
 
