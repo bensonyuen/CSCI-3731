@@ -1,0 +1,41 @@
+1. What is the difference between int and const int?
+
+Int allows the user to change the value of the variable, while const int does not.
+
+2. What is the difference between a function declaration and a function definition?
+
+A  function declaration only provides the compiler the name of the function, the number and type of arguments, and its return type. A function definition allocates memory for the function.
+
+3. What is wrong with the following C++ code? How would you fix it?    int sum;    for(int i=0; i<1000; ++i) {	sum += i; 
+	}
+    printf("Sum of 0 to 999 is %d\n", sum);
+
+Variable sum is not initialized. It should be set to 0.
+
+4. What is wrong with the following code and how would you fix it?    int n = 1;    if(n = 0) {        print("n is zero\n");    }
+
+The if statement will always fall through. There should be two equal signs in the if condition.
+
+5. What is wrong with the following code and how would you fix it?    int* ptr = nullptr;    scanf("%d", ptr);    printf("You entered %d", *ptr);
+
+Dereferencing a nullptr results in a seg fault. Value ptr should be initialized.
+
+
+6. What is the difference between the * and & operators?
+
+* dereferences a pointer.
+& returns a pointer to the data in a variable.
+
+7. Describe what each of the following declare:(a) int* a;
+null pointer a
+(b) const int b; 
+int b whose value cannot be changed
+
+(c) const int* c; 
+pointer to c cannot be changed
+
+(d) int* const d;
+constant pointer to int
+
+(e) const int* const e; 
+constant pointer to constant int
