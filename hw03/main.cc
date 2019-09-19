@@ -1,8 +1,14 @@
-#include <cstdio>
+
+
+#include "readPPM.h"
 /************************************************************************
  *
  ************************************************************************/
 int main() {
+	int w;
+	int h;
+	//printf("%s\n", "hello");
+	readPPM("test.ppm", &w, &h);
 	
 	// FILE* fp = fopen("counter", "r");
 	// int value = 0;

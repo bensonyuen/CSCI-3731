@@ -3,6 +3,6 @@
 #define READPPM_H
 
 // this is the declaration of the swap function
-void readPPM(int *x, int *y);
+unsigned char* readPPM(const char* fileName, int *w, int *h);
 
 #endif
