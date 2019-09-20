@@ -1,6 +1,5 @@
 #include "readPPM.h"
 #include <cstdio>
-//#include <cstdlib>
 
 unsigned char* readPPM(const char *fileName, int *w, int *h){
 
@@ -22,12 +21,14 @@ unsigned char* readPPM(const char *fileName, int *w, int *h){
     printf("Height: %d\n", *h);
     printf("Max: %d\n", max);
 
-    int size = (*w * *h);
-    printf("Size: %d\n", size);
-    unsigned char* pixels = new unsigned char[size];
+    unsigned char* pixels = new unsigned char[max];
+    //fread(pixels, sizeof(char), 128, fp);
+
+    while (fread(pixels, sizeof(char), 128, fp)) {
+        printf("%s", pixels);
+    } // end of for loop
 
     fclose(fp);
-
     //return nullptr;
 
     return pixels;

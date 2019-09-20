@@ -1,0 +1,24 @@
+1. What is wrong with the following code, and how would you fix it?    void swap(int* a, int* b) {        int* tmp = a;        a = b;        b = tmp;    } // end of swap method
+
+Function does not actually change value of passed variables, only copies them. Code should be:
+
+int temp = *a;
+*a = *b;
+*b = temp;
+
+2. Suppose you have a function that takes an array as an argument in the usual way, which is declared as:    void f(int* array, int length);Suppose you also have an array declared as:int a[128];How would you pass a sub-array containing only the third through sixth elements of a to thefunction f?
+
+f(a+2, 4);
+
+3. What is wrong with the following code and how would you fix it?    double* allocateArray(int length) {        double array[length];        return array;}
+
+Memory for array goes out of scope when method is finished. Code should be:
+
+double* allocateArray(int length) {
+	return new int[length];}
+
+4. What is wrong with the following code, and how would you fix it?    char string[5];    string[0] = ’h’;    string[1] = ’e’;    string[2] = ’l’;    string[3] = ’l’;    string[4] = ’o’;    printf("%s\n", string); 
+
+Array does not allow space for null character ‘\0’ to terminate. Array should hold 6 variables:
+
+char string[6];
