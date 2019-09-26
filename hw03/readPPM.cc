@@ -7,11 +7,11 @@ unsigned char* readPPM(const char *fileName, int *w, int *h){
     char pSix[3]; //array to read P6
     fscanf(fp, "%s\n", pSix);
     if ((pSix[0] != 'P') || (pSix[1] != '6')){
-    	printf("%s\n", "Not a PPM image");
+        printf("%s\n", "Not a PPM image");
     }
 
     fscanf(fp, "%d\n", w); //reads width
-    fscanf(fp, "%d\n", h); //reads width
+    fscanf(fp, "%d\n", h); //reads height
 
     int max;
     fscanf(fp, "%d\n", &max); //reads max
@@ -19,12 +19,10 @@ unsigned char* readPPM(const char *fileName, int *w, int *h){
     printf("Width: %d\n", *w);
     printf("Height: %d\n", *h);
 
-    unsigned char* pixels = new unsigned char[max];
+    unsigned char* pixels = new unsigned char[*w * *h * 3];
 
-    while (fread(pixels, sizeof(char), 128, fp)) {
-        printf("%s", pixels); //prints unsigned chars
-    }
-
+    fread(pixels, sizeof(*pixels), (*w * *h * 3), fp);
+    
     fclose(fp);
 
     return pixels;
