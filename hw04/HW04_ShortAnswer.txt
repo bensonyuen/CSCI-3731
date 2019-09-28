@@ -1,0 +1,14 @@
+1. What is the problem with two-dimensional arrays in C/C++?
+
+Two-dimensional arrays in C/C++ do not track the dimensions of the array, making it problematic when it is passed to a function.
+2. Describe two ways to work around C/C++’s problems with two dimensional arrays.
+
+The first way to work around two dimensional arrays is to use a flat array big enough to hold all the data and store them with the rows laid out end to end. The second way to work around this is to use the “numerical recipes trick,” which creates an array of pointers which all point to the start of each row in the one dimensional array.
+3. Is your computer big endian or little endian? Hint: write a small program to find out. int main() {
+    int n = 1;
+    if (*(char *)&n == 1){
+    	printf("%d\n", 1);
+    }
+}
+
+(char*)&n points to the first byte of int n. Since the if statement is true and prints 1, my computer is little endian.
