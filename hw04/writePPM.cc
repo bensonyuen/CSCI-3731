@@ -2,7 +2,7 @@
 #include "readPPM.h"
 #include <cstdio>
 
-void writePPM(const char *fileName, unsigned char charArray[], int w, int h){
+void writePPM(const char *fileName, int** charArray[], int w, int h){
     FILE* fp = fopen(fileName, "wb");
     fprintf(fp, "%s\n", "P6");
     fprintf(fp, "%d ", w);
