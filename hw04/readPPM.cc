@@ -1,7 +1,7 @@
 #include "readPPM.h"
 #include <cstdio>
 
-unsigned char* readPPM(const char *fileName, int *w, int *h){
+unsigned char* readPPM(const char *fileName, int *width, int *height){
 
     FILE* fp = fopen(fileName, "rb");
     char pSix[3]; //array to read P6
@@ -10,25 +10,28 @@ unsigned char* readPPM(const char *fileName, int *w, int *h){
     	printf("%s\n", "Not a PPM image");
     }
 
-    fscanf(fp, "%d\n", w); //reads width
-    fscanf(fp, "%d\n", h); //reads height
+    fscanf(fp, "%d\n", width); //reads width
+    fscanf(fp, "%d\n", height); //reads height
 
     int max;
     fscanf(fp, "%d\n", &max); //reads max
 
-    printf("Width: %d\n", *w);
-    printf("Height: %d\n", *h);
+    printf("Width: %d\n", *width);
+    printf("Height: %d\n", *height);
 
-    unsigned char* pixels = new unsigned char[*w * *h * 3];
-    //pixels = (int*);
-    //int* flat = new int[*w * *h];
+    unsigned char* pixels = new unsigned char[*width * *height * 3];
 
-    fread(pixels, sizeof(*pixels), (*w * *h * 3), fp);
-    // while (fread(pixels, sizeof(char), 128, fp)) {
-    //     printf("%s", pixels); //prints unsigned chars
-    // }
+    fread(pixels, sizeof(*pixels), (*width * *height * 3), fp);
 
     fclose(fp);
+
+    int** array = new int*[*height]; //array of pointers
+
+    *array = new int[*width * *height]; //allocates flat array
+
+    for(int j=1; j< *height; ++j) { 
+        array[ j ] = array[ j-1] + *width; //assigns rest of pointers to the start of each row
+        }
 
     return pixels;
 
