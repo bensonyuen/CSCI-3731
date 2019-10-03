@@ -1,0 +1,4 @@
+1. What are libraries good for?
+
+Libraries package a collection of file objects, which are good for distributing and reusing compiled code.
+2. What are the two types of library and how are they different? The two types of libraries are static and shared object (a.k.a. dynamic linked) libraries. Static libraries can be linked to the executable, which means that the executable can run without the library file around. Share object libraries are separate from the executable, are loaded at runtime, and are shared by multiple executables.
