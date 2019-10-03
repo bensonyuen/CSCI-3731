@@ -25,8 +25,6 @@ unsigned char* readPPM(const char *fileName, int *w, int *h){
     
     fclose(fp);
 
-    
-
     return pixels;
 
 }
