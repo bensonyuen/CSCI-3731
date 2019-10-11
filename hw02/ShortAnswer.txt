@@ -14,7 +14,7 @@ Variable sum is not initialized. It should be set to 0.
 
 4. What is wrong with the following code and how would you fix it?    int n = 1;    if(n = 0) {        print("n is zero\n");    }
 
-The if statement will always fall through. There should be two equal signs in the if condition.
+The if statement will always be false. There should be two equal signs in the if condition.
 
 5. What is wrong with the following code and how would you fix it?    int* ptr = nullptr;    scanf("%d", ptr);    printf("You entered %d", *ptr);
 
@@ -27,12 +27,12 @@ Dereferencing a nullptr results in a seg fault. Value ptr should be initialized.
 & returns a pointer to the data in a variable.
 
 7. Describe what each of the following declare:(a) int* a;
-null pointer a
+pointer to int
 (b) const int b; 
 int b whose value cannot be changed
 
 (c) const int* c; 
-pointer to c cannot be changed
+pointer to const int
 
 (d) int* const d;
 constant pointer to int

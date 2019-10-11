@@ -1,6 +1,6 @@
 1. What is wrong with the following code, and how would you fix it?    void swap(int* a, int* b) {        int* tmp = a;        a = b;        b = tmp;    } // end of swap method
 
-Function does not actually change value of passed variables, only copies them. Code should be:
+Function does not actually change value of passed variables, only copies them and moves pointers around. Code should be:
 
 int temp = *a;
 *a = *b;
@@ -17,7 +17,15 @@ Memory for array goes out of scope when method is finished. Code should be:
 double* allocateArray(int length) {
 	return new int[length];}
 
-4. What is wrong with the following code, and how would you fix it?    char string[5];    string[0] = ’h’;    string[1] = ’e’;    string[2] = ’l’;    string[3] = ’l’;    string[4] = ’o’;    printf("%s\n", string); 
+// or:
+
+double *array =  new double[length];
+return array;
+//then delete:
+delete [] array;
+
+4. What is wrong with the following code, and how would you fix it?    char string[5];    string[0] = ’h’;    string[1] = ’e’;    string[2] = ’l’;    string[3] = ’l’;    string[4] = ’o’;
+//added: string[5] = ‘\0’;    printf("%s\n", string); 
 
 Array does not allow space for null character ‘\0’ to terminate. Array should hold 6 variables:
 
