@@ -1,11 +1,27 @@
 #include "Angle.h"
 
 int main() {
-	std::cout << "Here" <<std::endl;
-	Angle a1(50.0);
-	std::cout << "There" <<std::endl;
-	std::cout << a1 <<std::endl;
-	std::cout << "Where" <<std::endl;
+
+	Angle a(50.0);
+	Angle b(30.0);
+	std::cout << a << " + " << b << " = " << a.getDegrees() + b.getDegrees() << std::endl;
+	std::cout << a << " - " << b << " = " << a.getDegrees() - b.getDegrees() << std::endl;
+	std::cout << a << " == " << b << " = " << (a == b) << std::endl << std::endl;
+	std::cout << a << " += " << b << " = " << (a += b) << std::endl;
+	std::cout << a << " -= " << b << " = " << (a -= b) << std::endl;
+
+	std::cout << a << " * " << b << " = " << a.getDegrees() * b.getDegrees() << std::endl;
+	std::cout << a << " / " << b << " = " << a.getDegrees() / b.getDegrees() << std::endl;
+	std::cout << a << " *= " << b << " = " << (a *= b) << std::endl;
+	std::cout << a << " /= " << b << " = " << (a /= b) << std::endl << std::endl;
+	
+	std::cout << "a = b " << (a = b) << std::endl;
+	std::cout << "Value a: " << a << std::endl;
+	std::cout << "Value b: " << b << std::endl << std::endl;
+
+	std::cout << a << " == " << b << " = " << (a == b) << std::endl;
+
+
 	return 0;
 
     

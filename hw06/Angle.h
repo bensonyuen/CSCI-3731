@@ -9,9 +9,19 @@ class Angle{
 
 	public: 
 		Angle(double degrees); 
-		virtual ~Angle();
+		Angle operator+(const Angle& angle) const;
+		Angle operator-(const Angle& angle) const;
+		Angle& operator+=(const Angle& angle);
+		Angle& operator-=(const Angle& angle);
+		Angle operator*(const Angle& angle) const;
+		Angle operator/(const Angle& angle) const;
+		Angle& operator*=(const Angle& angle);
+		Angle& operator/=(const Angle& angle);
+		Angle& operator=(const Angle& angle);
+		bool operator==(const Angle& angle) const;
 
-		// double getDegrees() const;
+
+		virtual ~Angle();
 
 		void set (double degrees);
 		double getDegrees() const;
