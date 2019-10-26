@@ -1,0 +1,18 @@
+1. What does the friend keyword do?
+
+The friend keyword allows a class to access another class’s private variables.
+2. Why should you never use using namespace std;?
+
+Using namespace std; may result in naming collisions if two people use the same package name, and using that statement in the header file will include all files that also use it.
+3. Why is memory management in C++ hard?
+
+Memory management in C++ is required to prevent memory leaks, but it is also prone to crashing if you delete it more than once. Also, having two or more pointers to a single piece of memory is hard to manage.
+4. Describe the concept of “ownership”, as it pertains to memory management in C++.
+
+Ownership is a convention used to manage heap memory by designating a class to be responsible for deleting its pointers in its destructor.
+5. What are the three ways a class can contain objects in C++?
+
+The first way a class can contain an object is by storing the actual object within the class. The second way is by passing the object as a reference, which requires that something else is held responsible for deleting it on the heap later on. The third way would be to pass the object as a pointer, but also comes with the risk of having the pointer return null.
+6. What us a forward declaration and why would you use one? 
+
+A forward declaration is used in the header file to indicate that there exists another class without defining the class. This can be used for classes that have not yet been given a definition, and also avoids an infinite recursion of #includes.
