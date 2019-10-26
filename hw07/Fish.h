@@ -13,7 +13,7 @@ class Fish{
 		Angle turn_rate;
 
 	public: 
-		Fish(double x, double y, double speed, Angle direction, Angle turn_rate);
+		Fish(double x, double y, double speed, double direction, double turn_rate);
 
 		virtual ~Fish();
 
@@ -24,7 +24,7 @@ class Fish{
 		Angle getDirection() const;
 		Angle getTurnRate() const;
 		void swim();
-		friend std::ostream& operator<<(std::ostream& out, const Fish& c);
+		friend std::ostream& operator<<(std::ostream& out, const Fish& f);
 
 	};
 

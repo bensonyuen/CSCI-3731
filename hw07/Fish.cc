@@ -1,10 +1,13 @@
 #include "Fish.h"
 #include "Angle.h"
+#include "Population.h"
 #include <cmath>
 #include <string>
 #include <cstdlib>
 
-Fish::Fish(double x, double y, double speed, Angle direction, Angle turn_rate) { 
+Fish::Fish(double x, double y, double speed, double direction, double turn_rate, Population& population) 
+    : direction(direction), 
+    turn_rate(turn_rate) { 
     this->x = x;
     this->y = y;
     this->speed = speed;
@@ -35,7 +38,7 @@ Angle Fish::getTurnRate() const {
     return turn_rate;
 }
 
-void Fish::swim(){
+void Fish::swim() {
   int choice = rand() % 3;
   if(choice == 0){
     direction -= turn_rate;
@@ -47,7 +50,8 @@ void Fish::swim(){
 }
 
 
-std::ostream& operator<<(std::ostream &out, const Angle& c) { 
-    out << c.degrees;
+std::ostream& operator<<(std::ostream &out, const Fish& f) { 
+    out << f.x;
+    out << f.y;
     return out;
 }
