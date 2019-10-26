@@ -17,8 +17,7 @@ class Population{
 		void add(Fish& fish);
 		// double remove();
 		double size() const;
-		// Angle* get() const;
-		// void swim();
+		// * get() const;
 		friend std::ostream& operator<<(std::ostream& out, const Population& p);
 
 	};

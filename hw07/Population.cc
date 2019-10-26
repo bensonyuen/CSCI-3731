@@ -20,7 +20,7 @@ void Population::add(Fish& fish){
 }
 
 // void Population::remove(Fish f) const { 
-//     return y;
+//     
 // }
 
 double Population::size() const { 
@@ -28,7 +28,7 @@ double Population::size() const {
 }
 
 // Angle* Fish::get() const { 
-//     return direction;
+//     
 // }
 
 std::ostream& operator<<(std::ostream &out, const Population& p) { 

@@ -5,7 +5,7 @@
 #include <string>
 #include <cstdlib>
 
-Fish::Fish(double x, double y, double speed, double direction, double turn_rate, Population& population) 
+Fish::Fish(double x, double y, double speed, double direction, double turn_rate) 
     : direction(direction), 
     turn_rate(turn_rate) { 
     this->x = x;
