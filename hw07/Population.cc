@@ -7,29 +7,39 @@
 
 Population::Population(int max_fishes) { 
     this->max_fishes = max_fishes;
-    Fish** fishes;
     fishes = new Fish*[max_fishes];
 } //end of constructor
 
 Population::~Population() {
 }
 
-void Population::add(Fish& fish){ 
-    int size = 0;
-    fishes [size] = &fish;
+void Population::add(Fish* fish){ 
+    fishes [size] = fish;
+    size++;
 }
 
-// void Population::remove(Fish f) const { 
-//     
-// }
+void Population::remove(Fish* fish) {
+	int index = -1;
+	for (int i = 0; i < size; i++){
+		if (fishes[i] == fish) {
+			index = i;
+			break;
+		}
+	}
 
-double Population::size() const { 
-    return sizeof(fishes);
+	for (int j = index; j < size - 1; j++){
+		fishes[j] = fishes[j + 1];
+	}
+	size--;
 }
 
-// Angle* Fish::get() const { 
-//     
-// }
+double Population::getSize() const { 
+    return size;
+}
+
+Fish* Population::get(int index) const { 
+    return fishes[index];
+}
 
 std::ostream& operator<<(std::ostream &out, const Population& p) { 
     // out << p.max_fishes;

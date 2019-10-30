@@ -5,17 +5,20 @@
 #include <string>
 #include <cstdlib>
 
-Fish::Fish(double x, double y, double speed, double direction, double turn_rate) 
+Fish::Fish(double x, double y, double speed, double direction, double turn_rate, Population& p) 
     : direction(direction), 
-    turn_rate(turn_rate) { 
+    turn_rate(turn_rate),
+    p(p) { 
     this->x = x;
     this->y = y;
     this->speed = speed;
     this->direction = direction;
     this->turn_rate = turn_rate;
+    p.add(this);
 } //end of constructor
 
 Fish::~Fish() {
+
 }
 
 double Fish::getX() const { 
