@@ -14,27 +14,27 @@ Population::~Population() {
 }
 
 void Population::add(Fish* fish){ 
-    fishes [size] = fish;
-    size++;
+    fishes [n] = fish;
+    n++;
 }
 
 void Population::remove(Fish* fish) {
 	int index = -1;
-	for (int i = 0; i < size; i++){
+	for (int i = 0; i < n; i++){
 		if (fishes[i] == fish) {
 			index = i;
 			break;
 		}
 	}
 
-	for (int j = index; j < size - 1; j++){
+	for (int j = index; j < n - 1; j++){
 		fishes[j] = fishes[j + 1];
 	}
-	size--;
+	n--;
 }
 
-double Population::getSize() const { 
-    return size;
+double Population::size() const { 
+    return n;
 }
 
 Fish* Population::get(int index) const { 

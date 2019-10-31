@@ -18,7 +18,7 @@ Fish::Fish(double x, double y, double speed, double direction, double turn_rate,
 } //end of constructor
 
 Fish::~Fish() {
-
+  p.remove(this);
 }
 
 double Fish::getX() const { 
