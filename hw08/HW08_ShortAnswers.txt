@@ -1,0 +1,20 @@
+1. What is the “rule of five”?
+
+The rule of five states that if any of the following are implemented, all of them should be implemented to avoid memory leaks or crashes when an object is copied or removed. The five methods are the destructor, copy constructor, copy=, move constructor, and move=.
+
+2. What is the difference between a copy and a move in C++?
+
+A copy duplicates the data of an object to another object and does not affect the original. A move transfers data from an object to another object, deleting the original.
+
+3. What is copy elision?
+
+Copy elision is an optimization technique used by the complier to avoid unnecessary copying of objects. This is done by skipping the return variable in a method and instead creating the object outside the scope of the method.
+
+4. What is a smart pointer?
+
+A smart pointer is a class that contains a pointer. It is used to keep track of ownership by automatically deleting objects that go out of scope with use of the destructor.
+
+5. How can you prevent someone from copying a class you wrote? 
+
+You can prevent copying by overloading the ‘=‘ operator with the command:
+Thing& operator=(const Thing& thing) = delete;
