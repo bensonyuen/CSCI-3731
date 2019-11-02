@@ -4,9 +4,6 @@
 
 class Image{
 	private: 
-		
-		// int width = 650;
-		// int height = 652;
 
 	public: 
 		Image();
@@ -15,7 +12,7 @@ class Image{
 		int h;
 		void readPPM(const char* fileName);
 		void writePPM(const char *fileName, Image i);
-		// void write_JPEG_file (const char *filename, int quality, Image i);
+		void write_JPEG_file (const char *filename, int quality, Image i);
 		virtual ~Image();
 
 	};
