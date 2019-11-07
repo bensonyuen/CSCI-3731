@@ -6,32 +6,17 @@
 #include <string>
 #include <cstdlib>
 
-FlippyFish::FlippyFish(double x, double y, double speed, double direction, double turn_rate) 
-    : direction(direction), 
-    turn_rate(turn_rate),
-    p(p) { 
-    this->x = x;
-    this->y = y;
-    this->speed = speed;
+FlippyFish::FlippyFish(double x, double y, double speed, double direction, double turn_rate, Population& p) 
+    : Fish(x, y, speed, p), 
+    direction(direction), 
+    turn_rate(turn_rate)
+    { 
     this->direction = direction;
     this->turn_rate = turn_rate;
-    p.add(this);
 } //end of constructor
 
 FlippyFish::~FlippyFish() {
   p.remove(this);
-}
-
-double FlippyFish::getX() const { 
-    return x;
-}
-
-double FlippyFish::getY() const { 
-    return y;
-}
-
-double FlippyFish::getSpeed() const { 
-    return speed;
 }
 
 Angle FlippyFish::getDirection() const { 
@@ -54,7 +39,7 @@ void FlippyFish::swim() {
 }
 
 
-std::ostream& operator<<(std::ostream &out, const Fish& f) { 
+std::ostream& operator<<(std::ostream &out, const FlippyFish& f) { 
     out << f.x;
     out << f.y;
     return out;

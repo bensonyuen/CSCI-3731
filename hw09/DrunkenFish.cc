@@ -6,10 +6,10 @@
 #include <string>
 #include <cstdlib>
 
-DrunkenFish::DrunkenFish(double x, double y, double speed) { 
-    this->x = x;
-    this->y = y;
-    this->speed = speed;
+DrunkenFish::DrunkenFish(double x, double y, double speed, Population& p)
+    : Fish(x, y, speed, p)
+    { 
+
 } //end of constructor
 
 DrunkenFish::~DrunkenFish() {
@@ -30,10 +30,11 @@ void DrunkenFish::swim() {
     else if(choice == 1) y += speed;
     else if(choice == 2) x -= speed;
     else                 y -= speed;
+    std::cout << "choice: " << rand() << std::endl;
 } // end of swim method
 
 
-std::ostream& operator<<(std::ostream &out, const Fish& f) { 
+std::ostream& operator<<(std::ostream &out, const DrunkenFish& f) { 
     out << f.x;
     out << f.y;
     return out;

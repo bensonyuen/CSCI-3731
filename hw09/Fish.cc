@@ -7,14 +7,16 @@
 #include <string>
 #include <cstdlib>
 
-Fish::Fish(double x, double y, double speed) { 
+Fish::Fish(double x, double y, double speed, Population& p)
+    : p(p){ 
     this->x = x;
     this->y = y;
     this->speed = speed;
+    p.add(this);
 } //end of constructor
 
 Fish::~Fish() {
-  p.remove(this);
+    p.remove(this);
 }
 
 double Fish::getX() const { 

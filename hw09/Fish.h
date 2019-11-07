@@ -1,19 +1,18 @@
 #ifndef FISH_H
 #define FISH_H
 #include "Angle.h"
-#include "FlippyFish.h"
-#include "DrunkenFish.h"
 class Population;
 #include <iostream>
 
 class Fish{
-	private: 
+	protected: 
 		double x;
 		double y;
 		double speed;
+		Population& p;
 
 	public: 
-		Fish(double x, double y, double speed);
+		Fish(double x, double y, double speed, Population& p);
 
 		virtual ~Fish();
 

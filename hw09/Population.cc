@@ -7,7 +7,7 @@
 
 Population::Population(int max_fishes) { 
     this->max_fishes = max_fishes;
-    fishes = new Fish**[max_fishes];
+    fishes = new Fish*[max_fishes];
 } //end of constructor
 
 Population::~Population() {
