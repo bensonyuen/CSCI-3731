@@ -36,6 +36,7 @@ void FlippyFish::swim() {
   }
    x += speed * direction.getCos();
    y += speed * direction.getSin();
+   // std::cout << "rand choice: " << rand() << std::endl;
 }
 
 
