@@ -1,0 +1,20 @@
+1. What is the difference between “downcasting” and “upcasting”?
+
+Downcasting allows us to refer to a parent class as one of its subclasses. Upcasting allows us to refer to a subclass as though it were its parent class.
+2. Why would you mark a method as virtual? Why wouldn’t you?
+
+A method that is marked virtual is used to allow subclasses to override the method. If you would like to use the superclass method instead of the subclass method, you would not use it.
+3. What is the difference between a dynamic cast and a static cast? Why would you use one over the other?
+
+A dynamic cast checks if the cast from one type to another is valid at runtime and also works like Java casting. In this way, dynamic casting is safer than static casting. Static casting does not check for validity at runtime, but at compile time. In this way, static casting is faster than dynamic casting.
+4. When might you use a const cast?
+
+You would use a const_cast when you need to cast away the const-ness of variables. 
+5. Suppose you have a Fruit base class and a Banana subclass. Suppose you have a banana declared like this:Banana b;What is the difference between what happens when you pass your banana to a method declared like this:	void eat(Fruit f);vs. one declared like this:	void eat(const Fruit& f);.
+
+The first method allows your class variables to be modified while the second method will not allow the class variables to be modified because of the keyword const.
+
+6. What is the difference between how Java and C++ handle multiple inheritance?
+
+Java implements interfaces to let you group together classes that can override the inheritance tree. C++ allows a class to inherit from more than one superclass, each with its own data and method implementations.
+
