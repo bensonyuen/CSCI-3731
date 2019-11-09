@@ -20,6 +20,7 @@ class Fish{
 		double getX() const;
 		double getY() const;
 		double getSpeed() const;
+		void swim();
 		friend std::ostream& operator<<(std::ostream& out, const Fish& f);
 
 	};

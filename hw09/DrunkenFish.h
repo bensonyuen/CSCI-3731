@@ -6,17 +6,10 @@ class Population;
 #include <iostream>
 
 class DrunkenFish : public Fish{
-	// private: 
-	// 	double x;
-	// 	double y;
-	// 	double speed;
 
 	public: 
 		DrunkenFish(double x, double y, double speed, Population& p);
-
 		virtual ~DrunkenFish();
-
-		// void set (double x, double y, double speed, Angle direction, Angle turn_rate);
 		double getX() const;
 		double getY() const;
 		double getSpeed() const;

@@ -31,6 +31,10 @@ double Fish::getSpeed() const {
     return speed;
 }
 
+void Fish::swim() { 
+
+}
+
 std::ostream& operator<<(std::ostream &out, const Fish& f) { 
     out << f.x;
     out << f.y;

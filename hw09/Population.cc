@@ -16,10 +16,19 @@ Population::~Population() {
 void Population::add(Fish* fish){ 
     fishes [n] = fish;
     n++;
+    // throw Exception ("Unable to remove");
 }
 
 void Population::remove(Fish* fish) {
 	int index = -1;
+	// if (fishes.size() <= 0){
+	// 	throw exception1();
+	// }
+
+	// catch(exception1 e){
+	// 	cout << ("Unable to remove"); 
+	// } 
+
 	for (int i = 0; i < n; i++){
 		if (fishes[i] == fish) {
 			index = i;
@@ -31,6 +40,7 @@ void Population::remove(Fish* fish) {
 		fishes[j] = fishes[j + 1];
 	}
 	n--;
+	
 }
 
 double Population::size() const { 
