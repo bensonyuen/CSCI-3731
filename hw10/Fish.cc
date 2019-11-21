@@ -29,7 +29,7 @@ double Fish::getSpeed() const {
 }
 
 void Fish::swim() { 
-
+	std::cout << "This is the superclass " << std::endl;
 }
 
 std::ostream& operator<<(std::ostream &out, const Fish& f) { 

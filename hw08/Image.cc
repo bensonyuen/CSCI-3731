@@ -55,7 +55,7 @@ void Image::writePPM(const char *fileName, Image i){
 }
 
 
-void write_JPEG_file (const char *filename, int quality, Image i) {
+void Image::write_JPEG_file (const char *filename, int quality, Image i) {
   /* This struct contains the JPEG compression parameters and pointers to
    * working space (which is allocated as needed by the JPEG library).
    * It is possible to have several such structures, representing multiple

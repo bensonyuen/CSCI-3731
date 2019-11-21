@@ -6,32 +6,28 @@
 #include <vector>
 
 int main() {
-
 	// Population p(1000);
 	std::vector<Fish*> pop;
 	FlippyFish* flippy;
 	DrunkenFish* drunken;
 	for (int i = 0; i < 300; i++){
-		flippy = new FlippyFish(0, 0, 0, 0, 0);
-		drunken = new DrunkenFish(0, 0, 0);
+		flippy = new FlippyFish(0, 0, 1, 0, 0);
+		drunken = new DrunkenFish(0, 0, 1);
 		pop.push_back(flippy);
 		pop.push_back(drunken);
 	}
 
-	// while (pop.size() != 1){
-	// 	for (int i = 0; i < (p.size() - 1); i++){
-	// 		Fish* tempFish = p.get(i);
-	// 		tempFish->swim();
-	// 		if ((tempFish->getX() > 100) || (tempFish->getX()> 100)){
-	// 			p.remove(tempFish);
-	// 			std::cout << "size: " << p.size() << std::endl;
-	// 		}
-	// 	}
-	// }
-	// std::string s = typeid(p.get(0)).name();
-
-
-	// std::cout << "Last Fish type: " << s << std::endl;
+	while (pop.size() != 1){
+		for (int i = 0; i < (pop.size() - 1); i++){
+			pop[i]->swim();
+			// std::cout << "X: " << pop[i]->getX() << "  Y:"<< pop[i]->getY() << std::endl;
+			if ((pop[i]->getX() > 100) || (pop[i]->getY() > 100) || (pop[i]->getX() < -100) || (pop[i]->getY() < -100)){
+				
+				pop.erase(pop.begin() + i);
+				std::cout << "size: " << pop.size() << std::endl;
+			}
+		}
+	}
 
 	std::cout << "Size: " << pop.size() << std::endl;
 

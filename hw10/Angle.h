@@ -1,34 +1,92 @@
-
 #ifndef ANGLE_H
 #define ANGLE_H
 #include <iostream>
+#include <cmath>
+#include <string>
 
-class Angle{
-	private: 
-		double degrees;
+template <class T> class Angle{
 
-	public: 
-		Angle(double degrees); 
-		Angle operator+(const Angle& angle) const;
-		Angle operator-(const Angle& angle) const;
-		Angle& operator+=(const Angle& angle);
-		Angle& operator-=(const Angle& angle);
-		Angle operator*(const Angle& angle) const;
-		Angle operator/(const Angle& angle) const;
-		Angle& operator*=(const Angle& angle);
-		Angle& operator/=(const Angle& angle);
-		Angle& operator=(const Angle& angle);
-		bool operator==(const Angle& angle) const;
+	private:
+		T degrees;
+
+	public:
+		Angle(T degrees) { 
+		    if(degrees >= 360.0){
+		      degrees -= 360.0;
+		    }
+		    if(degrees < 0.0) {
+		      degrees += 360.0;
+		    }
+		    this->degrees = degrees;
+		}   //end of constructor
+
+		virtual ~Angle() {
+
+		}
+
+		T getDegrees() const { 
+		    return degrees;
+		}
+
+		T getSin() const {
+			return sin(degrees * M_PI/180.0);
+		}
+
+		T getCos() const {
+			return cos(degrees * M_PI/180.0);
+		}
 
 
-		virtual ~Angle();
+		Angle operator+(const Angle& angle) const{
+			return Angle(angle.getDegrees() + angle.getDegrees());
+		}
 
-		void set (double degrees);
-		double getDegrees() const;
-		double getSin() const;
-		double getCos() const;
-		friend std::ostream& operator<<(std::ostream& out, const Angle& c);
+		Angle operator-(const Angle& angle) const{
+			return Angle(angle.getDegrees() - angle.getDegrees());
+		}
 
-	};
+		Angle& operator+=(const Angle& angle){
+		  degrees += angle.getDegrees();
+		  return *this;
+		}
+
+		Angle& operator-=(const Angle& angle) {
+		  degrees -= angle.getDegrees();
+		  return *this;
+		}
+
+		Angle operator*(const Angle& angle) const{
+		  return Angle(angle.getDegrees() * angle.getDegrees());
+		}
+
+		Angle operator/(const Angle& angle) const{
+		  return Angle(angle.getDegrees() / angle.getDegrees());
+		}
+
+		Angle& operator*=(const Angle& angle){
+		  degrees *= angle.getDegrees();
+		  return *this;
+		}
+
+		Angle& operator/=(const Angle& angle) {
+		  degrees /= angle.getDegrees();
+		  return *this;
+		}
+
+		Angle& operator=(const Angle& angle) {
+		  degrees = angle.getDegrees();
+		  return *this;
+		}
+
+		bool operator==(const Angle& angle) const {
+		  return degrees == angle.getDegrees();
+		}
+
+		// std::ostream& operator<<(std::ostream &out, const Angle& c) { 
+		//     out << c.degrees;
+		//     return out;
+		// }
+
+};
 
 #endif

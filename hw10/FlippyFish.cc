@@ -17,11 +17,11 @@ FlippyFish::FlippyFish(double x, double y, double speed, double direction, doubl
 FlippyFish::~FlippyFish() {
 }
 
-Angle FlippyFish::getDirection() const { 
+Angle<double> FlippyFish::getDirection() const { 
     return direction;
 }
 
-Angle FlippyFish::getTurnRate() const { 
+Angle<double> FlippyFish::getTurnRate() const { 
     return turn_rate;
 }
 

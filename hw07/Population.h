@@ -1,8 +1,8 @@
-
 #ifndef POPULATION_H
 #define POPULATION_H
 class Population;
 #include <iostream>
+#include <stdexcept>
 
 class Population{
 	private: 

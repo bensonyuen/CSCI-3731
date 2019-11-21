@@ -28,7 +28,7 @@ void DrunkenFish::swim() {
     else if(choice == 1) y += speed;
     else if(choice == 2) x -= speed;
     else                 y -= speed;
-    std::cout << "rand choice: " << rand() << std::endl;
+    // std::cout << "drunken x: " << x << " y: " << y << " choice: " << choice << " speed: " << speed << std::endl;
 } // end of swim method
 
 
