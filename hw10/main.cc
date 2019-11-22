@@ -29,7 +29,7 @@ int main() {
 		}
 	}
 
-	std::cout << "Size: " << pop.size() << std::endl;
+	// std::cout << "Size: " << pop.size() << std::endl;
 
 	return 0;
 
